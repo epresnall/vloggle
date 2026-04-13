@@ -1,22 +1,27 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-purple: #6c5ce7;
-  --color-purple-dark: #5a4bd4;
-  --color-purple-light: #6c5ce721;
-  --color-yellow: #f9ca24;
-  --color-yellow-dark: #e0b31e;
-  --color-dark: #1a1a2e;
-  --color-dark-text: #1a1a2e;
+  /* Vloggle brand palette — from Webflow CSS */
+  --color-primary: #fb8b24;
+  --color-primary-dark: #e07a1e;
+  --color-primary-light: #fb8b2421;
+  --color-purple: #fb8b24;
+  --color-purple-dark: #e07a1e;
+  --color-purple-light: #fb8b2421;
+  --color-yellow: #fb8b24;
+  --color-yellow-dark: #e07a1e;
+  --color-dark: #36454f;
+  --color-dark-deep: #130b2c;
+  --color-dark-text: #36454f;
   --color-bg: #ffffff;
   --color-bg-alt: #f8f9fc;
-  --color-border: #eef0f6;
-  --color-muted: #666;
+  --color-border: #e8edf4;
+  --color-muted: #666161;
 
   --color-background: var(--color-bg);
   --color-foreground: var(--color-dark);
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-montserrat, var(--font-inter)), ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
@@ -28,18 +33,22 @@ body {
   background: var(--color-bg);
   color: var(--color-dark);
   font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.6;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary);
 }
 
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-purple);
+  background: var(--color-primary);
   color: #fff;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 14px;
   letter-spacing: 0.02em;
   padding: 14px 32px;
@@ -48,8 +57,8 @@ body {
   transition: background-color 0.2s, box-shadow 0.2s;
 }
 .btn-primary:hover {
-  background: var(--color-purple-dark);
-  box-shadow: 0 4px 20px #6c5ce740;
+  background: var(--color-primary-dark);
+  box-shadow: 0 4px 20px #fb8b2440;
 }
 
 .btn-outline {
@@ -57,16 +66,16 @@ body {
   align-items: center;
   justify-content: center;
   background: transparent;
-  color: var(--color-purple);
+  color: var(--color-primary);
   font-weight: 700;
   font-size: 14px;
   padding: 14px 32px;
   border-radius: 50px;
-  border: 2px solid var(--color-purple);
+  border: 2px solid var(--color-primary);
   transition: background-color 0.2s, color 0.2s;
 }
 .btn-outline:hover {
-  background: var(--color-purple);
+  background: var(--color-primary);
   color: #fff;
 }
 
@@ -74,9 +83,9 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-yellow);
-  color: var(--color-dark);
-  font-weight: 700;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 800;
   font-size: 14px;
   letter-spacing: 0.02em;
   padding: 14px 32px;
@@ -85,8 +94,8 @@ body {
   transition: background-color 0.2s, box-shadow 0.2s;
 }
 .btn-yellow:hover {
-  background: var(--color-yellow-dark);
-  box-shadow: 0 4px 20px #f9ca2440;
+  background: var(--color-primary-dark);
+  box-shadow: 0 4px 20px #fb8b2440;
 }
 
 .card {
