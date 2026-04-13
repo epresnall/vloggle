@@ -27,7 +27,7 @@ export default function Footer() {
               Home
             </Link>
             <a
-              href="https://calendly.com/tvec/the-spokesman-2025"
+              href="https://cal.com/videorep/vloggle-discovery-call"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[var(--color-purple)] transition-colors"

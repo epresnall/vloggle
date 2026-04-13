@@ -14,7 +14,7 @@ const navLinks = [
   { href: "/#faq", label: "FAQs" },
 ];
 
-const CALENDLY = "https://calendly.com/tvec/the-spokesman-2025";
+const CALENDLY = "https://cal.com/videorep/vloggle-discovery-call";
 
 export default function Header() {
   const [open, setOpen] = useState(false);

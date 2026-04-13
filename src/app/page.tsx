@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const CALENDLY = "https://calendly.com/tvec/the-spokesman-2025";
+const CALENDLY = "https://cal.com/videorep/vloggle-discovery-call";
 
 const logos = [
   { src: "/images/unilever.png", alt: "Unilever" },
