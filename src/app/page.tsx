@@ -256,22 +256,22 @@ export default function Home() {
             See what Vloggle delivers — real videos, real brands.
           </p>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <Image
-                src="/images/Vloggle-2---Full-Thumbnail-p-800.png"
-                alt="Vloggle sample video thumbnail"
-                width={640}
-                height={360}
-                className="w-full"
+            <div className="rounded-2xl overflow-hidden shadow-lg aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/ZPrETBJbumM"
+                title="Vloggle — Turn Your Blogs Into Vlogs"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
               />
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <Image
-                src="/images/Vloggle-Why-Vloggle-Thumbnail-p-800.jpg"
-                alt="Why Vloggle sample thumbnail"
-                width={640}
-                height={360}
-                className="w-full"
+            <div className="rounded-2xl overflow-hidden shadow-lg aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/fZG8Oduolx0"
+                title="Why Vloggle?"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
               />
             </div>
           </div>
