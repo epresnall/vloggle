@@ -9,23 +9,30 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.vloggle.co"),
-  title: {
-    default: "Vloggle | Turn Blogs Into Vlogs",
-    template: "%s | Vloggle",
-  },
+  title: "Vloggle - Turn Your Blogs Into Scroll-Stopping Vlogs!",
   description:
-    "A done-for-you video content creation service for SaaS businesses. Turn your blog articles into 10 searchable brand videos featuring a human brand representative.",
+    "Vloggle is a video marketing service that turns your high-performing blogs into Youtube Channel vlogs, including script-writing, authentic presenting, and on-brand editing.",
   openGraph: {
     type: "website",
-    siteName: "Vloggle",
-    locale: "en_US",
+    title: "Vloggle - Turn Your Blogs Into Scroll-Stopping Vlogs!",
+    description:
+      "Vloggle is a video marketing service that turns your high-performing blogs into Youtube Channel vlogs, including script-writing, authentic presenting, and on-brand editing.",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vloggle - Turn Your Blogs Into Scroll-Stopping Vlogs!",
+    description:
+      "Vloggle is a video marketing service that turns your high-performing blogs into Youtube Channel vlogs, including script-writing, authentic presenting, and on-brand editing.",
+  },
+  icons: {
+    icon: "/images/favicon.png",
+    apple: "/images/webclip.png",
+  },
 };
 
 export default function RootLayout({
@@ -34,8 +41,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-white text-[var(--color-dark)]">
+    <html lang="en" className={`${montserrat.variable}`}>
+      <body className="min-h-full flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -5,91 +5,92 @@ import Image from "next/image";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "/#what", label: "WHAT" },
-  { href: "/#how", label: "HOW" },
-  { href: "/#why", label: "WHY" },
-  { href: "/#testimonials", label: "TESTIMONIALS" },
-  { href: "/#samples", label: "SAMPLES" },
-  { href: "/#pricing", label: "PRICING" },
-  { href: "/#faq", label: "FAQs" },
+  { href: "#What", label: "WHAT" },
+  { href: "#How", label: "HOW" },
+  { href: "#Why", label: "WHY" },
+  { href: "#Testimonials", label: "TESTIMONIALS" },
+  { href: "#Samples", label: "SAMPLES" },
+  { href: "#Pricing", label: "PRICING" },
+  { href: "#FAQs", label: "FAQs" },
 ];
 
-const CALENDLY = "https://cal.com/videorep/vloggle-discovery-call";
+const BOOKING_URL = "https://cal.com/videorep/vloggle-discovery-call";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-2">
+    <header className="navbar">
+      <div className="container-vloggle flex items-center justify-between py-3">
+        <Link href="/" className="flex items-center no-underline">
           <Image
-            src="/images/Vloggle-Icon-p-500.png"
-            alt="Vloggle"
-            width={40}
+            src="/images/Logo-White--Text-WhiteTransparent.png"
+            alt="Vloggle logo"
+            width={160}
             height={40}
-            className="h-9 w-auto"
+            className="max-w-[160px] h-auto hover:scale-105 transition-transform"
+            priority
           />
-          <span className="text-xl font-bold text-[var(--color-dark)]">
-            Vloggle
-          </span>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-6">
+        {/* Desktop nav */}
+        <nav className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
-              className="text-xs font-semibold tracking-wide text-[var(--color-dark)] transition-colors hover:text-[var(--color-purple)]"
+              className="nav-link"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
           <a
-            href={CALENDLY}
+            href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary text-sm"
+            className="btn-menu ml-4"
           >
             Book A Call
           </a>
-        </div>
+        </nav>
 
+        {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
           className="lg:hidden p-2"
           aria-label="Toggle menu"
         >
           <span
-            className={`block h-0.5 w-6 bg-gray-800 transition-transform mb-1.5 ${open ? "translate-y-2 rotate-45" : ""}`}
+            className={`block h-0.5 w-6 bg-[var(--color-charcoal)] transition-transform mb-1.5 ${open ? "translate-y-2 rotate-45" : ""}`}
           />
           <span
-            className={`block h-0.5 w-6 bg-gray-800 transition-opacity ${open ? "opacity-0" : ""}`}
+            className={`block h-0.5 w-6 bg-[var(--color-charcoal)] transition-opacity ${open ? "opacity-0" : ""}`}
           />
           <span
-            className={`block h-0.5 w-6 bg-gray-800 transition-transform mt-1.5 ${open ? "-translate-y-2 -rotate-45" : ""}`}
+            className={`block h-0.5 w-6 bg-[var(--color-charcoal)] transition-transform mt-1.5 ${open ? "-translate-y-2 -rotate-45" : ""}`}
           />
         </button>
-      </nav>
+      </div>
 
+      {/* Mobile nav */}
       {open && (
         <div className="lg:hidden bg-white border-t px-6 pb-4">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="block py-3 text-sm font-semibold tracking-wide"
+              className="block py-3 text-sm font-semibold tracking-wide no-underline text-[var(--color-charcoal)]"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
           <a
-            href={CALENDLY}
+            href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
-            className="btn-primary text-sm mt-2 w-full text-center"
+            className="btn-primary w-full text-center mt-2"
           >
             Book A Call
           </a>
